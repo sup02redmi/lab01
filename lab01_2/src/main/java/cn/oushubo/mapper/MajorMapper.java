@@ -36,7 +36,7 @@ public interface MajorMapper {
             //方式一：嵌套查询
             //一对一：@One注解-使用select属性引入另外一条SQL语句
             @Result(property="dept",column="dept_id",
-                    one=@One(select="cn.edu.seig.mapper.DeptMapper.findDeptById",
+                    one=@One(select="cn.oushubo.mapper.DeptMapper.findDeptById",
                             fetchType= FetchType.LAZY))
     })
     public List<Major> findByMajorName(String majorName);

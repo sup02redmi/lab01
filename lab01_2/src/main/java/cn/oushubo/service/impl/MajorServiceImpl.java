@@ -25,12 +25,18 @@ public class MajorServiceImpl implements MajorService {
 
     @Override
     public int deleteMajorById(String majorId) {
-        return majorMapper.deleteMajorById(majorId);
+        int row = majorMapper.deleteMajorById(majorId);
+        sqlSession.commit();
+        sqlSession.close();
+        return row;
     }
 
     @Override
     public int updateMajor(Major major) {
-        return majorMapper.updateMajor(major);
+        int row = majorMapper.updateMajor(major);
+        sqlSession.commit();
+        sqlSession.close();
+        return row;
     }
 
     @Override

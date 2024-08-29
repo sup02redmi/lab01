@@ -11,7 +11,6 @@ public class Major{
     private String majorName;//专业
     private Integer tuition;//学费
     private Integer deptId;//系别ID
-    private Dept dept;
     public Major(){}
 
     public Major(String majorId) {
